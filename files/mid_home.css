@@ -1,0 +1,114 @@
+.Offers {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 0rem;
+}
+
+/* .Offers .center {
+    font-size: 3.5rem;
+    color: #444;
+    margin-bottom: 3rem;
+    text-transform: upcpiase;
+    text-align: center;
+} */
+
+.Offers .products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 0.5fr));
+
+    gap: 2rem;
+}
+
+.Offers .products .box {
+    text-align: center;
+    height: 100%;
+    border-radius: 20px;
+    padding: 1rem 0rem;
+    background: #fce5e9;
+    /* box-shadow: 0.5 .5rem 1rem rgba(0, 0, 0, 0.1); */
+    /* outline: .1rem solid #ccc; */
+    /* outline-offset: -1.5rem; */
+    cursor: pointer;
+}
+
+.Offers .products .box:hover {
+    /* outline: .2rem solid #222; */
+    box-shadow: 0 .25rem 0.5rem rgba(0, 0, 0, 0.977);
+    /* outline-offset: 0; */
+}
+
+.Offers .products .box img {
+    height: 15rem;
+    outline-offset: 0;
+    padding: 3rem 2rem;
+}
+
+.Offers .products .box:hover img {
+    transform: scale(.9);
+}
+
+.Offers .products .box h3 {
+    padding: .5rem 0;
+    border-radius: 20px;
+    font-size: large;
+    color: #444;
+}
+
+.Offers .products .box:hover h3 {
+    color: #27ae60;
+}
+
+span {
+    width: 329%;
+}
+
+span.up {
+    /* width: 50%; */
+
+    background-color: #f32d2d;
+    
+    box-shadow: 0 .25rem 0.5rem rgba(0, 0, 0, 0.977);
+    border-radius: 20px;
+
+    font-size: 25px;
+    color: #fce5e9;
+    font-family: JioBold;
+    padding: 8px 0px 0px;
+    cursor: pointer;
+}
+
+/* *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-* */
+.ofline{
+
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 0rem;
+}
+.sales {
+    max-width: 1200px;
+    display: flex;
+    width: 100%;
+    gap: 0.5rem;
+   
+  }
+  .sales  div {
+    
+    width: 100%;
+    margin: 6px;
+    gap: 2rem;
+    cursor: pointer;
+    text-align: center;
+   
+  }
+  .sales  div img{
+    
+    width: 100%;
+    margin: 3px;
+    cursor: pointer;
+    
+    
+}
+.sales  div img:hover{
+      box-shadow: 0 .5rem 0.5rem rgba(0, 0, 0, 0.977);
+
+  }

@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/92ba12f5f7.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="favicon-32x32.png" type="image/x-icon">
+    <link rel="stylesheet" href="footer.css">
+    <title>Grocery Store-vegetables</title>
+    <style>
+        /*  nevigation bar*/
+        .right {
+        float: right;
+            padding: 6px 50px;
+            list-style: none;
+        }
+
+        .btn {
+            padding: 15px 60px;
+            border: 2px solid rgb(5, 5, 5);
+            background-color: transparent;
+            color: rgb(0, 0, 0);
+            margin: 25px;
+            font-size: 1.5rem;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        * {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+            outline: none;
+            border: none;
+            text-decoration: none;
+            transition: all .2s linear;
+            text-transform: capitalize;
+        }
+
+        #navbar {
+            /* background-color: #05080b;  */
+
+            border-radius: 0px;
+            width: cover;
+            background-color: #008Ecc;
+            box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.977);
+
+            /* nav-down:  20%;  */
+        }
+
+        #navbar ul {
+            overflow: auto;
+
+            /* display: flex; */
+            margin: 3px 10px;
+            /* background-color: rgb(0, 123, 175); */
+            width: cover;
+
+
+        }
+
+        #navbar li {
+            float: right;
+            /* float: inherit; */
+            list-style: none;
+            font-size: x-large;
+            margin: 13px 15px;
+        }
+
+        #navbar li a {
+            padding: 3px 20px;
+            font-size: x-large;
+            text-decoration: none;
+            color: rgb(220, 220, 220);
+
+        }
+
+        #navbar div.left {
+            float: left;
+            font-family: Georgia;
+            color: aliceblue;
+            /* padding: 6px 50px;  */
+        }
+
+        #navbar li a:hover {
+
+            color: rgb(239, 228, 16);
+        }
+
+        #navbar i {
+            width: 25px;
+            text-align: center;
+        }
+
+        .btn {
+
+
+            padding: 6px 20px;
+            border: 2px solid #008Ecc;
+            background-color: #008Ecc;
+            color: white;
+            margin: -5px;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: large;
+            /* font-size: 1.0rem; */
+            border-radius: 10px;
+            font-size: 2rem;
+
+            cursor: pointer;
+
+        }
+
+        html {
+            font-size: 62.5%;
+            overflow-x: hidden;
+        }
+
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .vegetables {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .vegetables .center {
+            font-size: 3.5rem;
+            color: #444;
+            margin-bottom: 3rem;
+            text-transform: upcpiase;
+            text-align: center;
+        }
+
+        .vegetables .products {
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+            gap: 2rem;
+        }
+
+        .vegetables .products .box {
+            text-align: center;
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            background: #fff;
+            box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.1);
+            outline: .1rem solid #ccc;
+            outline-offset: -1.5rem;
+            cursor: pointer;
+        }
+
+       .vegetables .products .box:hover {
+             outline: .2rem solid #222;
+            outline-offset: 0;
+        }
+
+        .vegetables .products .box img {
+            height: 25rem;
+            outline-offset: 0;
+            padding: 3rem 2rem;
+        }
+
+        .vegetables .products .box:hover img {
+            transform: scale(0.9);
+        }
+
+        .vegetables .products .box h3 {
+            padding: .5rem 0;
+            border-radius: 20px;
+            font-size: 2rem;
+            color: #444;
+        }
+
+        .vegetables .products .box:hover h3 {
+            color: #27ae60;
+        }
+
+
+        .vegetables .products .box .price {
+            font-size: 2rem;
+
+            color: #444;
+        }
+
+        s {
+            text-decoration: line-through;
+        }
+
+        .vegetables .products .box:hover .price {
+            color: #fb0202;
+        }
+
+        .vegetables .products .box .cart {
+            font-size: 2rem;
+            margin-bottom: -2%;
+            color: #444;
+            list-style: none;
+
+        }
+
+        .vegetables .products .box .cart .btn {
+            font-size: 2rem;
+            text-align: left;
+            margin-bottom: 10px;
+            margin-top: 10px;
+            border: #008Ecc;
+            color: rgb(255, 255, 255);
+            background-color: #008Ecc;
+            list-style: none;
+            box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.1);
+
+        }
+
+        .vegetables .products .box .cart a:hover .btn {
+            color: #fb0202;
+
+        }
+
+        .search {
+            padding-right: 40px;
+        }
+
+        .topnav input[type=text] {
+
+            padding: 6px;
+            margin-top: 8px;
+            margin-right: 16px;
+            border: none;
+
+            font-size: 1.5rem;
+        }
+
+
+        .topnav a,
+        .topnav input[type=text] {
+            float: none;
+            display: block;
+            text-align: left;
+            width: 100%;
+            margin: 0;
+            padding: 9px;
+        }
+
+        .topnav input[type=text] {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+        .dimg img{
+            width: 100%;
+            height: 120%;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- jjon -->
+    <div width=75%>
+        <nav id="navbar">
+            <ul>
+
+                <li>
+                    <div class="topnav">
+                        <form class="search">
+                            <input type="text" placeholder="Search vegetables..">
+                        </form>
+                    </div>
+                </li>
+
+                <div class="left">
+                    <li><i class="fa-solid fa-g"></i>rocery store</li>
+
+
+                </div>
+                <li><a href="http://localhost/files/login.html"><b> Log In</b></a> </li>
+                    <!-- <button class="btn"></button> -->
+                    <!-- <li><a href="#"><i class="fa-solid fa-at"></i><b>bout us</b> </a> </li> -->
+                    <li><a href="gro.html"><i class="fa-solid fa-basket-shopping"></i><b> Provision</b></a></li>
+                    <li><a href="dairy.html"><i class="fa-solid fa-cow"></i><b> Dairy</b></a></li>
+                    <li><a href="dairy.html"><i class="fa-solid fa-apple-whole"></i><b> Fruits</b></a> </li>
+                    <!-- <li><a href="vegetables.html"><i class="fa-solid fa-carrot"></i><b> vegetables</b> </a> </li> -->
+                    <li><a href="1_first_page.html"><i class="fa-solid fa-house"></i><b> Home</b></a></li>
+            </ul>
+
+        </nav>
+    </div>
+    <!-- kgnjrsng -->
+    <div class="dimg">
+        <img src="vegetables/CXNP9513_1200x300_110322.webp" alt="">
+    </div>
+    <section class="vegetables">
+
+        <h1 class="center">Fresh vegetables</h1>
+
+        <div class="products">
+
+            <div class="box" data-name="v-1">
+                <img src="vegetables/Cauliflower.jpg">
+                <h3>Cauliflower 1 pc (Approx. 450 g - 750 g) </h3>
+                <div class="price"> M.R.P : ₹ <s>350.00</s></div>
+                <div class="price"><b> ₹ 22.00</b></div>
+                <div class="cart">
+                    <li><a href="#"><button class="btn">Add to cart</button></a> </li>
+                </div>
+
+            </div>
+
+            <div class="box" data-name="v-2">
+                <img src="vegetables/broccoli.jpg" alt="">
+                <h3>Broccoli (Each) (Approx 400 g - 600 g) </h3>
+                <div class="price">M.R.P :<b> ₹ 69.00</b></div>
+                <div class="cart">
+                    <li><a href="#"><button class="btn">Add to cart</button></a> </li>
+                </div>
+            </div>
+
+            <div class="box" data-name="v-3">
+                <img src="vegetables/green-capsicum.jpg" alt="">
+                <h3>Green Capsicum 500 g</h3>
+                <div class="price">M.R.P :<b> ₹ 39.50 </b></div>
+                <div class="cart">
+                    <li><a href="#"><button class="btn">Add to cart</button></a> </li>
+                </div>
+            </div>
+
+            <div class="box" data-name="v-4">
+                <img src="vegetables/brinjal-purple-striped-.jpg" alt="">
+                <h3>Brinjal Purple Striped 500 g</h3>
+                <div class="price">M.R.P :<b>₹ 22.00 </b></div>
+                <div class="cart">
+                    <li><a href="#"><button class="btn">Add to cart</button></a> </li>
+                </div>
+            </div>
+
+
+            <div class="box" data-name="v-5">
+                <img src="vegetables/onion.jpg" alt="">
+                <h3>Onion 1 kg</h3>
+                <div class="price">M.R.P :<b>₹ 19.00 </b></div>
+                <div class="cart">
+                    <li><a href="#"><button class="btn">Add to cart</button></a> </li>
+                </div>
+            </div>
+
+            <div class="box" data-name="v-16">
+                <img src="vegetables/potato-per-kg.jpg" alt="">
+                <h3>Potato per kg </h3>
+                <div class="price">M.R.P :<b>₹ 28.00 </b></div>
+                <div class="cart">
+                    <li><a href="#"><button class="btn">Add to cart</button></a> </li>
+                </div>
+            </div>
+
+            <div class="box" data-name="v-6">
+                <img src="vegetables/ginger-indian-200-g.jpg" alt="">
+                <h3>Ginger Indian 200 g </h3>
+                <div class="price">M.R.P :<b>₹ 12.00 </b></div>
+                <div class="cart">
+                    <li><a href="#"><button class="btn">Add to cart</button></a> </li>
+                </div>
+            </div>
+
+            <div class="box" data-name="v-7">
+                <img src="vegetables/tomato.jpg" alt="">
+                <h3>Tomato 1 kg </h3>
+                <div class="price">M.R.P :<b>₹ 25.00 </b></div>
+                <div class="cart">
+                    <li><a href="#"><button class="btn">Add to cart</button></a> </li>
+                </div>
+            </div>
+
+            <div class="box" data-name="v-8">
+                <img src="vegetables/lemon-100.jpg" alt="">
+                <h3>Lemon 100 g </h3>
+                <div class="price">M.R.P :<b> ₹ 26.00 </b></div>
+                <div class="cart">
+                    <li><a href="#"><button class="btn">Add to cart</button></a> </li>
+                </div>
+
+            </div>
+
+            <div class="box" data-name="v-9">
+                <img src="vegetables/lettuce-leafy-250-g.jpg" alt="">
+                <h3>Lettuce Leafy 250 g (Approx 160 g - 300 g) </h3>
+                <div class="price">M.R.P :<b>₹ 79.00 </b></div>
+                <div class="cart">
+                    <li><a href="#"><button class="btn">Add to cart</button></a> </li>
+                </div>
+            </div>
+
+            <div class="box" data-name="v-10">
+                <img src="vegetables/zucchini-green-500.jpg" alt="">
+                <h3>Zucchini Green 500 g </h3>
+                <div class="price">M.R.P :<b> ₹ 74.50 </b></div>
+                <div class="cart">
+                    <li><a href="#"><button class="btn">Add to cart</button></a> </li>
+                </div>
+            </div>
+
+            <div class="box" data-name="v-11">
+                <img src="vegetables/beetroot.jpg" alt="">
+                <h3>Beetroot 500 g </h3>
+                <div class="price">M.R.P :<b>₹ 12.00 </b></div>
+                <div class="cart">
+                    <li><a href="#"><button class="btn">Add to cart</button></a> </li>
+                </div>
+            </div>
+
+            <div class="box" data-name="v-12">
+                <img src="vegetables/indian-garlic-200-g.jpg" alt="">
+                <h3>Indian Garlic 200 g</h3>
+                <div class="price">M.R.P :<b>₹ 20.00 </b></div>
+                <div class="cart">
+                    <li><a href="#"><button class="btn">Add to cart</button></a> </li>
+                </div>
+            </div>
+            
+            <div class="box" data-name="v-13">
+                <img src="vegetables/celery-approx-225-g-300-g.jpg" alt="">
+                <h3>Celery (Approx 225 g - 300 g)
+                </h3>
+                <div class="price">M.R.P :<b>₹ 65.00 </b></div>
+                <div class="cart">
+                    <li><a href="#"><button class="btn">Add to cart</button></a> </li>
+                </div>
+            </div>
+
+            <div class="box" data-name="v-14">
+                <img src="vegetables/lettuce-iceberg-250-g.jpg" alt="">
+                <h3> Trikaya Lettuce Iceberg 250 g</h3>
+                <div class="price">M.R.P :<b>₹ 59.00 </b></div>
+                <div class="cart">
+                    <li><a href="#"><button class="btn">Add to cart</button></a> </li>
+                </div>
+            </div>
+
+            <div class="box" data-name="v-15">
+                <img src="vegetables/redcap1kg.jpg" alt="">
+                <h3>Fresho Mixed Capsicum, 2 pcs</h3>
+                <div class="price">M.R.P :<b>₹ 120.00 </b></div>
+                <div class="cart">
+                    <li><a href="#"><button class="btn">Add to cart</button></a> </li>
+                </div>
+            </div>
+
+
+
+            <div class="box" data-name="v-17">
+                <img src="vegetables/ridge-gourd.jpg" alt="">
+                <h3>Ridge Gourd 500 g</h3>
+                <div class="price">M.R.P :<b>₹ 28.00 </b></div>
+                <div class="cart">
+                    <li><a href="#"><button class="btn">Add to cart</button></a> </li>
+                </div>
+            </div>
+
+            <div class="box" data-name="v-18">
+                <img src="vegetables/Lauki.jpg" alt="">
+                <h3>Lauki (Bottle Gourd) 1 kg</h3>
+                <div class="price">M.R.P :<b> ₹ 19.00 </b></div>
+                <div class="cart">
+                    <li><a href="#"><button class="btn">Add to cart</button></a> </li>
+                </div>
+            </div>
+
+            <div class="box" data-name="v-19">
+                <img src="vegetables/green-chilli-200-g.jpg" alt="">
+                <h3> Green Chilli 200 g</h3>
+                <div class="price">M.R.P :<b>₹ 24.00 </b></div>
+                <div class="cart">
+                    <li><a href="#"><button class="btn">Add to cart</button></a> </li>
+                </div>
+            </div>
+
+            <div class="box" data-name="v-20">
+                <img src="vegetables/methi-leaves.jpg" alt="">
+                <h3>Methi Leaves 1 bunch (Approx 100 g - 200 g)k </h3>
+                <div class="price">M.R.P :<b> ₹ 20.00 </b></div>
+                <div class="cart">
+                    <li><a href="#"><button class="btn">Add to cart</button></a> </li>
+                </div>
+            </div>
+
+            <div class="box" data-name="v-20">
+                <img src="vegetables/sweet-corn.jpg" alt="">
+                <h3>Sweet Corn 1 pc (Approx 250 g - 450 g) </h3>
+                <div class="price">M.R.P :<b> ₹ 16.00 </b></div>
+                <div class="cart">
+                    <li><a href="#"><button class="btn">Add to cart</button></a> </li>
+                </div>
+            </div>
+
+            <div class="right">
+                <li><a href="1_first_page.html"><button class="btn">Back</button></a> </li>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="l-footer">
+            <h1>
+                <img src="favicon-32x32.png" alt="">
+            </h1>
+            <p>
+                Did you ever imagine that the freshest of dairy and vegetables, top quality pulses and food grains,
+                dairy products and hundreds of branded items could be handpicked and delivered to your home, all at the
+                click of a button? India’s first comprehensive online megastore, grocerystore.com, brings a whopping
+                20000+ products with more than 1000 brands, to over 4 million happy customers.</p>
+        </div>
+        <ul class="r-footer">
+            <li>
+                <h2>
+                    Social</h2>
+                <ul class="box">
+                    <li><a href="#">
+                            <p><i class="fa-brands fa-facebook"></i> Facebook</p>
+                        </a></li>
+                    <li><a href="#">
+                            <p><i class="fa-brands fa-twitter"></i> Twitter</p>
+                        </a></li>
+                    <li><a href="#">
+                            <p><i class="fa-brands fa-pinterest"></i> Pinterest</p>
+                        </a></li>
+                    <li><a href="#">
+                            <p><i class="fa-brands fa-instagram"></i> instagram</p>
+                        </a></li>
+                </ul>
+            </li>
+            <li class="features">
+                <h2>
+                    Information</h2>
+                <ul class="box h-box">
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="#">Sales</a></li>
+                    <li><a href="#">Tickets</a></li>
+                    <li><a href="#">Certifications</a></li>
+
+                </ul>
+            </li>
+            <li>
+                <h2>
+                    Legal</h2>
+                <ul class="box">
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Use</a></li>
+                    <li><a href="#">Contract</a></li>
+                </ul>
+            </li>
+        </ul>
+        <div class="b-footer">
+            <p>
+                <img src="payment-method_69e7ec.svg" alt="">
+                <br>
+                &copy; grocerystore.com | Designed by Jash Asmani & Dhairya Bhatt
+        </div>
+    </footer>
+
+
+</body>

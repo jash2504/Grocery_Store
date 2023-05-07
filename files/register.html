@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- <link rel="stylesheet" href="index.css">  -->
+    <script src="https://kit.fontawesome.com/92ba12f5f7.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon-32x32.png" type="image/x-icon">
+    <title>Grocery Store-Register Page</title>
+    <style>
+        * {
+            margin: 20px 20px 20px;
+            padding: 0;
+
+        }
+
+        body {
+            background-color: #008Ecc;
+            background-size: cover;
+        }
+
+        .container {
+            color: rgb(4, 4, 4);
+            position: absolute;
+            list-style: none;
+
+            display: flex;
+            text-align: center;
+            top: 7%;
+            left: 20%;
+            width: 950px;
+            height: 85%;
+            background-color: rgb(255, 255, 255);
+            box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.977);
+            border-radius: 5px;
+
+        }
+
+        .container .admin img {
+
+            border: 5px solid black;
+            margin-left: 110.5px;
+            margin-right: 50px;
+            margin-top: 130px;
+
+            width: 200px;
+            height: 200px;
+
+        }
+
+
+        .container h1 {
+            font-family: 'Heebo', sans-serif;
+            width: 50%;
+           
+            text-align: center;
+            display: inline-block;
+            font-size: 40px;
+            margin-right: 100px;
+            margin-bottom: 20px;
+            padding: 13px 0;
+            padding-left: 100px;
+        }
+
+        .box {
+            width: 100%;
+            margin: 20px 0px 0px;
+            border: 1px solid rgb(0, 0, 0);
+        }
+
+        .box input {
+            background: none;
+            width: 75%;
+            margin: 1px 1px 1px;
+            font-size: 15px;
+            list-style: none;
+            border: none;
+            outline: none;
+            color: rgb(27, 110, 182);
+        }
+
+        .box i {
+            width: 25px;
+
+            list-style: none;
+            text-align: center;
+        }
+
+        .btn {
+            padding: 3px 20px;
+            border: 2px solid rgb(27, 110, 182);
+            background-color: rgb(27, 110, 182);
+            box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.977);
+            color: rgb(252, 252, 252);
+            margin: 12px;
+            font-size: 1.0rem;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            opacity: 0.5;
+            list-style: none;
+            color: rgb(128, 0, 0);
+            background: transparent;
+        }
+
+        .Forget {
+            margin: 20px;
+            font-size: larger;
+            text-align: left;
+        }
+
+        .Forget a {
+
+            color: red;
+
+        }
+
+        .register b {
+
+            color: blue;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <!-- */*/**/*/*/*/***/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/** -->
+    <script>
+        function onChange() {
+            const password1 = document.querySelector('input[name=password1]');
+            const password2 = document.querySelector('input[name=password2]');
+            if (password2.value === password1.value) {
+                password2.setCustomValidity('');
+                // alert('');
+            } else {
+                password2.setCustomValidity('Passwords do not match');
+                // alert('Passwords do not match');
+            }
+        }
+    </script>
+    <!-- */*/**/*/*/*/***/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/** -->
+
+    <form action="register.php" method="post">
+        <div class="container">
+            <div class="admin"><img src="admin.jpg" alt="">
+            </div>
+            <div class="welcome">
+
+                <h1>Welcome </h1>
+                <div class="box">
+                    <i class="fa-solid fa-user"></i>
+                    <input type="username" required name="username" id="username" placeholder="Enter Your username">
+                </div>
+
+                <div class="box">
+                    <i class="fa-solid fa-envelope"></i>
+                    <input type="email" required name="email" id="email" placeholder="Enter Your Email">
+                </div>
+
+                <div class="box">
+                    <i class="fa-solid fa-key"></i>
+
+                    <input name="password1" type="password" onChange="onChange()" id="password"
+                        placeholder="Enter Your Password" required>
+
+                </div>
+                <div class="box">
+                    <i class="fa-solid fa-key"></i>
+
+                    <input name="password2" type="password" onChange="onChange()" id="password"
+                        placeholder="Confirm Your Password">
+                </div>
+
+                <div>
+                    <li><a href=" #"><button class="btn">Signup</button> </a></li>
+                </div>
+
+                <div class="register">
+
+                    <li>Already have an account? <b><a href="login.html"> Login now</a></b> </li>
+                </div>
+
+            </div>
+    </form>
+</body>
+
+</html>
