@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="shortcut icon" href="favicon-32x32.png" type="image/x-icon">
+    <meta name="shortcut icon" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/92ba12f5f7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="mid_home.css">
+    <title>Grocery Store</title>
+    <style>
+        #navbar {
+            /* background-color: #05080b;  */
+
+            border-radius: 0px;
+            width: cover;
+            background-color: #008Ecc;
+            box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.977);
+
+            /* nav-down:  20%;  */
+        }
+
+        #navbar ul {
+            overflow: auto;
+
+            /* display: flex; */
+            margin: 3px 10px;
+            /* background-color: rgb(0, 123, 175); */
+            width: cover;
+
+
+        }
+
+        #navbar li {
+            float: right;
+            /* float: inherit; */
+            list-style: none;
+            font-size: 1.5rem;
+            margin: 13px 15px;
+        }
+
+        #navbar li a {
+            padding: 3px 20px;
+            text-decoration: none;
+            color: rgb(220, 220, 220);
+
+        }
+
+        #navbar div.left {
+            float: left;
+            font-family: Georgia;
+            color: aliceblue;
+            /* padding: 6px 50px;  */
+        }
+
+        #navbar li a:hover {
+
+            color: rgb(239, 228, 16);
+        }
+
+        #navbar i {
+            width: 25px;
+            text-align: center;
+        }
+
+        .btn {
+
+
+            padding: 6px 20px;
+            border: 2px solid rgb(62, 62, 168);
+            background-color: rgb(62, 62, 168);
+            color: white;
+            margin: -5px;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: large;
+            /* font-size: 1.0rem; */
+            border-radius: 10px;
+            cursor: pointer;
+
+        }
+
+
+
+
+        body {
+            background-color: rgb(238, 238, 238);
+            background-repeat: no-repeat;
+            background-size: 10%;
+            bottom: 10px;
+            width: 100%;
+        }
+
+        hr {
+            /* height: 20px; */
+            padding: 20px 20px;
+            background-color: transparent;
+            border: transparent;
+        }
+
+        /* .slider {
+            width: 99%;
+            height: 550px;
+            position: absolute;
+            left: 50%;
+            right: 50%;
+            transform: translate(-50%, -50%);
+            background-image: url("flip.jpg");
+            background-size: 100% 100%;
+            top: 55%;
+            box-shadow: .5rem .5rem 1rem rgba(0, 0, 0, 0.977);
+            animation: slider 25s infinite linear;
+
+        }
+
+        @keyframes slider {
+            0% {
+                background-image: url("flip.jpg");
+                background-size: 100% 100%;
+            }
+
+            35% {
+                background-image: url("flip2.jpg");
+                background-size: 100% 100%;
+            }
+
+            75% {
+                background-image: url("flip3.jpg");
+                background-size: 100% 100%;
+            }
+
+        }
+ */
+        .carousel-inner img {
+            height: 400px;
+            width: 100%;
+        }
+
+        /* ------------------------*************************-------------------------*********** */
+    </style>
+</head>
+
+<body>
+
+
+    <header>
+        <div width=75%>
+            <nav id="navbar">
+                <ul>
+                    <div class="left">
+                        <li><i class="fa-solid fa-g"></i>rocery store</li>
+
+
+                    </div>
+                    <li><a href="login.html">Log In</a> </li>
+                    <!-- <button class="btn"></button> -->
+                    <!-- <li><a href="#"><i class="fa-solid fa-at"></i><b>bout us</b> </a> </li> -->
+                    <li><a href="gro.html"><i class="fa-solid fa-basket-shopping"></i><b> Grocery</b></a></li>
+                    <li><a href="dairy.html"><i class="fa-solid fa-cow"></i><b> Dairy</b></a></li>
+                    <li><a href="dairy.html"><i class="fa-solid fa-apple-whole"></i><b> Fruits</b></a> </li>
+                    <li><a href="vagetables.html"><i class="fa-solid fa-carrot"></i><b> vegetables</b> </a> </li>
+                    <li><a href="1_first_page.html"><i class="fa-solid fa-house"></i><b> Home</b></a></li>
+                </ul>
+
+            </nav>
+        </div>
+        <!--*-*-*-*-*-*-*-*-*--BOOTSTRAP CODE*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*--*-*-*-*-*-*-*-* -->
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <a href="vagetables.html"><img class="d-block w-100" src="flip4.jpg" alt="First slide"></a>
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="flip2.jpg" alt="Second slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="flip3.jpg" alt="Third slide">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+
+        </div>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+        <!-- *-*-*-**-*-*-*-*-*-*-*-*-*-*********-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-* -->
+        <section class="Offers">
+            <h1>Offers on daily essentials</h1>
+
+            <div class="products">
+
+                <div class="box" data-name="v-1">
+                    <span class="up">
+                        "Up To" <b>20%</b>"OFF"
+                    </span>
+                    <img src="home/1--dals-pulses-20200714.png">
+                    <h3>Dals & Pulses </h3>
+                </div>
+                <div class="box" data-name="v-2">
+                    <span class="up">
+                        "Up To" <b>50%</b>"OFF"
+                    </span>
+                    <img src="home/0-14.png">
+                    <h3>Atta,Flours & Sooji</h3>
+                </div>
+                <div class="box" data-name="v-3">
+                    <span class="up">
+                        "Up To" <b>20%</b>"OFF"
+                    </span>
+                    <img src="home/0-18.png">
+                    <h3>Edible Oils </h3>
+                </div>
+                <div class="box" data-name="v-4">
+                    <span class="up">
+                        "Up To" <b>10%</b>"OFF"
+                    </span>
+                    <img src="home/0-20.png">
+                    <h3>Salt,Suger & Jaggery </h3>
+                </div>
+                <div class="box" data-name="v-5">
+                    <span class="up">
+                        "Up To" <b>15%</b>"OFF"
+                    </span>
+                    <img src="home/bath-hand-wash-20200714.png">
+                    <h3>Bath Hand Wash</h3>
+                </div>
+                <div class="box" data-name="v-6">
+                    <span class="up">
+                        "Up To" <b>33%</b>"OFF"
+                    </span>
+                    <img src="home/toothpaste-20200520.png">
+                    <h3>Toothpaste </h3>
+                </div>
+                <div class="box" data-name="v-7">
+                    <span class="up">
+                        "Up To" <b>50%</b>"OFF"
+                    </span>
+                    <img src="home/noodle-pasta-vermicelli-20200603.png">
+                    <h3>Noodle & Pasta </h3>
+                </div>
+                <div class="box" data-name="v-8">
+                    <span class="up">
+                        "Up To" <b>30%</b>"OFF"
+                    </span>
+                    <img src="home/0-44.png">
+                    <h3>Biscuits & Cookies </h3>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- -*-*-*-*-*-*-*-*-*-*-*-*-*-*-2ndbootstrap*/-*--*-*-*-*-*-*-*-*-*-*-*-*-*--*-*-*-*-* -->
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <a href="vagetables.html"><img class="d-block w-100" src="flip4.jpg" alt="First slide"></a>
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="flip2.jpg" alt="Second slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="flip3.jpg" alt="Third slide">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+
+        </div>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+
+
+
+    </header>
+    <!-- -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*--*-*-*FOOTER-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-* -->
+    
+    
+    <!-- -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-* -->
+    <footer class="footer">
+        <div class="l-footer">
+            <h1>
+                <img src="favicon-32x32.png" alt="">
+            </h1>
+            <p>
+                Did you ever imagine that the freshest of dairy and vegetables, top quality pulses and food grains,
+                dairy products and hundreds of branded items could be handpicked and delivered to your home, all at the
+                click of a button? India’s first comprehensive online megastore, grocerystore.</p>
+        </div>
+        <ul class="r-footer">
+            <li>
+                <h2>
+                    Social</h2>
+                <ul class="box">
+                    <li><a href="#">
+                            <p><i class="fa-brands fa-facebook"></i> Facebook</p>
+                        </a></li>
+                    <li><a href="#">
+                            <p><i class="fa-brands fa-twitter"></i> Twitter</p>
+                        </a></li>
+                    <li><a href="#">
+                            <p><i class="fa-brands fa-pinterest"></i> Pinterest</p>
+                        </a></li>
+                    <li><a href="https://instagram.com/jash_asmani?igshid=YmMyMTA2M2Y=">
+                            <p><i class="fa-brands fa-instagram"></i> instagram</p>
+                        </a></li>
+                </ul>
+            </li>
+
+            <li class="features">
+                <h2>
+                    Information</h2>
+                <ul class="box h-box">
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="#">Sales</a></li>
+                    <li><a href="#">Tickets</a></li>
+                    <li><a href="#">Certifications</a></li>
+
+                </ul>
+            </li>
+            <li>
+                <h2>
+                    Legal</h2>
+                <ul class="box">
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Use</a></li>
+                    <li><a href="#">Contract</a></li>
+                </ul>
+            </li>
+        </ul>
+        <div class="b-footer">
+            <p>
+                <img src="payment-method_69e7ec.svg" alt="">
+                <br>
+                &copy; grocerystore.com | Designed by Jash Asmani 
+            </p>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>

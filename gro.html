@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/92ba12f5f7.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="favicon-32x32.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="footer.css">
+    <title>Grocery Store-staples</title>
+    <style>
+        .right {
+            float: right;
+            padding: 6px 50px;
+            list-style: none;
+        }
+
+        .btn {
+            padding: 15px 60px;
+            border: 2px solid rgb(5, 5, 5);
+            background-color: transparent;
+            color: rgb(0, 0, 0);
+            margin: 25px;
+            font-size: 1.5rem;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        * {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+            outline: none;
+            border: none;
+            text-decoration: none;
+            transition: all .2s linear;
+            text-transform: capitalize;
+        }
+
+        #navbar {
+            /* background-color: #05080b;  */
+
+            border-radius: 0px;
+            width: cover;
+            background-color: #008Ecc;
+            box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.977);
+
+            /* nav-down:  20%;  */
+        }
+
+        #navbar ul {
+            overflow: auto;
+
+            /* display: flex; */
+            margin: 3px 10px;
+            /* background-color: rgb(0, 123, 175); */
+            width: cover;
+
+
+        }
+
+        #navbar li {
+            float: right;
+            /* float: inherit; */
+            list-style: none;
+            font-size: x-large;
+            margin: 13px 15px;
+        }
+
+        #navbar li a {
+            padding: 3px 20px;
+            font-size: x-large;
+            text-decoration: none;
+            color: rgb(220, 220, 220);
+
+        }
+
+        #navbar div.left {
+            float: left;
+            font-family: Georgia;
+            color: aliceblue;
+            /* padding: 6px 50px;  */
+        }
+
+        #navbar li a:hover {
+
+            color: rgb(239, 228, 16);
+        }
+
+        #navbar i {
+            width: 25px;
+            text-align: center;
+        }
+
+        .btn {
+
+
+            padding: 6px 20px;
+            border: 2px solid #008Ecc;
+            background-color: #008Ecc;
+            color: white;
+            margin: -5px;
+           
+            font-family: 'Times New Roman', Times, serif;
+            font-size: large;
+            /* font-size: 1.0rem; */
+            border-radius: 10px;
+            font-size: 2rem;
+            cursor: pointer;
+
+        }
+
+        
+
+        html {
+            font-size: 62.5%;
+            overflow-x: hidden;
+        }
+
+        body {
+            background-color: #f3f3f3;
+        }
+
+        .staples {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .staples .center {
+            font-size: 3.5rem;
+            color: #444;
+            margin-bottom: 3rem;
+            text-transform: upcpiase;
+            text-align: center;
+        }
+
+        .staples .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+            gap: 2rem;
+        }
+
+        .staples .products .box {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: rgb(255, 255, 255);
+            box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.1);
+            outline: .1rem solid #ccc;
+            outline-offset: -1.5rem;
+            cursor: pointer;
+        }
+
+        .staples .products .box:hover {
+            outline: .2rem solid #222;
+            outline-offset: 0;
+        }
+
+        .staples .products .box img {
+            height: 25rem;
+            outline-offset: 0;
+            padding: 3rem 2rem;
+        }
+
+        .staples .products .box:hover img {
+            transform: scale(.9);
+        }
+
+        .staples .products .box h3 {
+            padding: .5rem 0;
+            font-size: 2rem;
+            color: #444;
+        }
+
+        .staples .products .box:hover h3 {
+            color: #27ae60;
+        }
+
+
+        .staples .products .box .price {
+            font-size: 2rem;
+            color: #444;
+        }
+
+        .staples .products .box:hover .price {
+            color: #fb0202;
+        }
+
+        .staples .products .box .cart {
+            font-size: 2rem;
+            margin-bottom: -2%;
+            color: #444;
+            list-style: none;
+
+        }
+        .staples .products .box .cart a:hover .btn {
+            color: #fb0202;
+
+        }
+
+        .staples .products .box .cart .btn {
+            font-size: 2rem;
+            text-align: left;
+            margin-bottom: 15px;
+            margin-top: 10px;
+            border: #008Ecc;
+            color: rgb(255, 255, 255);
+            background-color: #008Ecc;
+            list-style: none;
+            box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.1);
+
+        }
+        s {
+            text-decoration: line-through;
+        }
+        /* .slider img{
+            width: 100%;
+            height: 500px;
+            box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.1);
+        } */
+        .search {
+            padding-right: 40px;
+        }
+
+        .topnav input[type=text] {
+
+            padding: 6px;
+            margin-top: 8px;
+            margin-right: 16px;
+            border: none;
+
+            font-size: 1.5rem;
+        }
+
+
+        .topnav a,
+        .topnav input[type=text] {
+            float: none;
+            display: block;
+            text-align: left;
+            width: 100%;
+            margin: 0;
+            padding: 9px;
+        }
+
+        .topnav input[type=text] {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+        .dimg img{
+            width: 100%;
+            height: 120%;
+        }
+    </style>
+</head>
+
+<body>
+    <div width=100%>
+        <nav id="navbar">
+            <ul>
+
+
+                <div class="left">
+                    <li><i class="fa-solid fa-g"></i>rocery store</li>
+                </div>
+
+                <li>
+                    <div class="topnav">
+                        <form class="search">
+                            <input type="text" placeholder="Search grocery..">
+                        </form>
+                    </div>
+                </li>
+
+                <li><a href="http://localhost/files/login.html">Log In</a> </li>
+                   
+                    <li><a href="dairy.html"><i class="fa-solid fa-cow"></i><b> Dairy</b></a></li>
+                    <li><a href="dairy.html"><i class="fa-solid fa-apple-whole"></i><b> Fruits</b></a> </li>
+                    <li><a href="vegetables.html"><i class="fa-solid fa-carrot"></i><b> vegetables</b> </a> </li>
+                    <li><a href="1_first_page.html"><i class="fa-solid fa-house"></i><b> Home</b></a></li>
+            </ul>
+
+        </nav>
+    </div>
+    
+
+    <div class="dimg">
+        <img src="gro/1stpic.jpg" alt="">
+    </div>
+    <section class="staples">
+
+        <h1 class="center">Staples</h1>
+        <div class="products">
+
+            <div class="box" data-name="v-1">
+                <img src="gro/chakki-atta-10-.jpg" alt="">
+                <h3>Chakki Atta 10 kg</h3>
+                <div class="price"> M.R.P : ₹ <s>375.00</s></div>
+                <div class="price"><b> ₹ 305.00</b></div>
+                <div class="cart">
+                    <li><a href="#"><button class="btn">Add to cart</button></a> </li>
+                </div>
+            </div>
+
+            <div class="box" data-name="v-2">
+                <img src="gro/good-life-almonds.jpg" alt="">
+                <h3>Good Life Almonds 500 g</h3>
+                <div class="price"> M.R.P : ₹ <s>549.00</s></div>
+                <div class="price"><b> ₹ 365.00</b></div>
+                <div class="cart">
+                    <li><a href="#"><button class="btn">Add to cart</button></a> </li>
+                </div>
+            </div>
+
+            <div class="box" data-name="v-3">
+                <img src="gro/good-life-whole-w320-cashews-100.jpg" alt="">
+                <h3>Good Life Whole (W320) Cashews 100 g</h3>
+                <div class="price"> M.R.P : ₹ <s>120.00</s></div>
+                <div class="price"><b> ₹ 89.00</b></div>
+                <div class="cart">
+                    <li><a href="#"><button class="btn">Add to cart</button></a> </li>
+                </div>
+            </div>
+
+            <div class="box" data-name="v-4">
+                <img src="gro/tur-arhar-dal.jpg" alt="">
+                <h3>Tur / Arhar Dal 2 kg</h3>
+                <div class="price"> M.R.P : ₹ <s>270.00</s></div>
+                <div class="price"><b> ₹ 197.00</b></div>
+                <div class="cart">
+                    <li><a href="#"><button class="btn">Add to cart</button></a> </li>
+                </div>
+            </div>
+
+
+            <div class="box" data-name="v-5">
+                <img src="gro/aashirvaad-whole.jpg" alt="">
+                <h3>Aashirvaad Whole Wheat Atta 10 kg</h3>
+                <div class="price"> M.R.P : ₹ <s>476.00</s></div>
+                <div class="price"><b> ₹ 398.00</b></div>
+                <div class="cart">
+                    <li><a href="#"><button class="btn">Add to cart</button></a> </li>
+                </div>
+            </div>
+
+            <div class="box" data-name="v-16">
+                <img src="gro/sugar-m-2-kg.jpg" alt="">
+                <h3>Sugar (M) 2 kg</h3>
+                <div class="price"> M.R.P : ₹ <s>100.00</s></div>
+                <div class="price"><b> ₹ 78.00</b></div>
+                <div class="cart">
+                    <li><a href="#"><button class="btn">Add to cart</button></a> </li>
+                </div>
+            </div>
+
+            <div class="box" data-name="v-6">
+                <img src="gro/tata-iodised-salt-1.jpg" alt="">
+                <h3>Tata Iodised Salt 1 kg </h3>
+                <div class="price"> M.R.P : ₹ <s>24.00</s></div>
+                <div class="price"><b> ₹ 21.00</b></div>
+                <div class="cart">
+                    <li><a href="#"><button class="btn">Add to cart</button></a> </li>
+                </div>
+            </div>
+
+            <div class="box" data-name="v-7">
+                <img src="gro/fortune-sunlite-refined.jpg" alt="">
+                <h3>Fortune Sunlite Refined Sunflower Oil 1 L
+                </h3>
+                <div class="price"> M.R.P : ₹ <s>230.00</s></div>
+                <div class="price"><b> ₹ 205.00</b></div>
+                <div class="cart">
+                    <li><a href="#"><button class="btn">Add to cart</button></a> </li>
+                </div>
+            </div>
+
+            <div class="box" data-name="v-8">
+                <img src="gro/gulab-double-filtered-.jpg" alt="">
+                <h3>Gulab Double Filtered Groundnut Oil 1 L</h3>
+                <div class="price"> M.R.P : ₹ <s>235.00</s></div>
+                <div class="price"><b> ₹ 183.00</b></div>
+                <div class="cart">
+                    <li><a href="#"><button class="btn">Add to cart</button></a> </li>
+                </div>
+            </div>
+
+             <div class="box" data-name="v-9">
+                <img src="gro/cinthol-cool-menthol-active-deo-fragrance-soap-125-g-.jpg" alt="">
+                <h3>Cinthol Cool Menthol + Active Deo Fragrance Soap 125 g (Pack of 3) </h3>
+                <div class="price"> M.R.P : ₹ <s>156.00</s></div>
+                <div class="price"><b> ₹ 117.00</b></div>
+                <div class="cart">
+                    <li><a href="#"><button class="btn">Add to cart</button></a> </li>
+                </div>
+            </div>
+
+            <div class="box" data-name="v-10">
+                <img src="gro/pears-pure-gentle-soap-with-natural-oils-125-g-buy-4-get-.jpg" alt="">
+                <h3>Pears Pure & Gentle Soap with Natural Oils 125 g (Buy 4 Get 1 Free) </h3>
+                <div class="price"> M.R.P : ₹ <s>335.00</s></div>
+                <div class="price"><b> ₹ 260.00</b></div>
+                <div class="cart">
+                    <li><a href="#"><button class="btn">Add to cart</button></a> </li>
+                </div>
+            </div>
+
+            <div class="box" data-name="v-11">
+                <img src="gro/head-shoulders-cool-menthol-anti-dandruff.jpg" alt="">
+                <h3>Head & Shoulders Cool Menthol Anti-Dandruff Shampoo 180 ml</h3>
+                <div class="price"> M.R.P : ₹ <s>170.00</s></div>
+                <div class="price"><b> ₹ 158.00</b></div>
+                <div class="cart">
+                    <li><a href="#"><button class="btn">Add to cart</button></a> </li>
+                </div>
+            </div>
+
+            <div class="box" data-name="v-12">
+                <img src="gro/the-moms-.jpg" alt="">
+                <h3>The Moms Co. Damaged Control Conditioner 200 ml</h3>
+                <div class="price"> M.R.P : ₹ <s>492.00</s></div>
+                <div class="price"><b> ₹ 369.00</b></div>
+                <div class="cart">
+                    <li><a href="#"><button class="btn">Add to cart</button></a> </li>
+                </div>
+            </div>
+
+            <div class="box" data-name="v-13">
+                <img src="gro/surf-excel-easy-wash-.jpg" alt="">
+                <h3>Surf Excel Easy Wash Detergent Powder 1.5 kg
+                </h3>
+                <div class="price"> M.R.P : ₹ <s>210.00</s></div>
+                <div class="price"><b> ₹ 169.00</b></div>
+                <div class="cart">
+                    <li><a href="#"><button class="btn">Add to cart</button></a> </li>
+                </div>
+            </div>
+
+            <div class="box" data-name="v-14">
+                <img src="gro/fogg-marco-fragrance-body-spray-for-men-150-ml-product-images-o491228117-p491228117-0-202203281302.jpg" alt="">
+                <h3> Fogg Marco Fragrance Body Spray for Men 150 ml</h3>
+                <div class="price"> M.R.P : ₹ <s>275.00</s></div>
+                <div class="price"><b> ₹ 250.00</b></div>
+                <div class="cart">
+                    <li><a href="#"><button class="btn">Add to cart</button></a> </li>
+                </div>
+            </div>
+
+            <!-- <div class="box" data-name="v-15">
+                <img src="black-grapes.jpg" alt="">
+                <h3>Juicy black Grapes 1 kg</h3>
+                <div class="price">M.R.P :<b>₹ 220.00 </b></div>
+                <div class="cart">
+                    <li><a href="#"><button class="btn">Add to cart</button></a> </li>
+                </div>
+            </div>
+
+
+
+            <div class="box" data-name="v-17">
+                <img src="guava.jpg" alt="">
+                <h3>Guava Taiwan Pink Premium Indian 1 Pc (Approx 250 g - 400 g)</h3>
+                <div class="price">M.R.P :<b>₹ 55.00 </b></div>
+                <div class="cart">
+                    <li><a href="#"><button class="btn">Add to cart</button></a> </li>
+                </div>
+            </div>
+
+            <div class="box" data-name="v-18">
+                <img src="sapota.jpg" alt="">
+                <h3>Sapota Premium Indian Pack 500 g</h3>
+                <div class="price">M.R.P :<b> ₹ 69.00 </b></div>
+                <div class="cart">
+                    <li><a href="#"><button class="btn">Add to cart</button></a> </li>
+                </div>
+            </div>
+
+            <div class="box" data-name="v-19">
+                <img src="guava-jumbo.jpg" alt="">
+                <h3>Guava Jumbo White Premium Indian 1 Pc (Approx 350 g - 500 g) </h3>
+                <div class="price">M.R.P :<b> ₹ 99.00 </b></div>
+                <div class="cart">
+                    <li><a href="#"><button class="btn">Add to cart</button></a> </li>
+                </div>
+            </div>
+
+            <div class="box" data-name="v-20">
+                <img src="banana.jpg" alt="">
+                <h3>Banana Nendran Premium Indian 2 Pc (Approx 350 g - 400 g) </h3>
+                <div class="price">M.R.P :<b> ₹ 49.00 </b></div>
+                <div class="cart">
+                    <li><a href="#"><button class="btn">Add to cart</button></a> </li>
+                </div>
+            </div>
+
+            <div class="box" data-name="v-20">
+                <img src="pomegranate.jpg" alt="">
+                <h3>Pomegranate Kesar Medium Premium Indian 4 Pc (Approx 1 Kg - 1.12 Kg) </h3>
+                <div class="price">M.R.P :<b> ₹ 269.00 </b></div>
+                <div class="cart">
+                    <li><a href="#"><button class="btn">Add to cart</button></a> </li>
+                </div>
+            </div> -->
+
+            <div class="right">
+                <li><a href="1_first_page.html"><button class="btn">Back</button></a> </li>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="l-footer">
+            <h1>
+                <img src="favicon-32x32.png" alt="">
+            </h1>
+            <p>
+                Did you ever imagine that the freshest of staples and vegetables, top quality pulses and food grains, staples products and hundreds of branded items could be handpicked and delivered to your home, all at the click of a button? India’s first comprehensive online megastore,  grocerystore.com, brings a whopping 20000+ products with more than 1000 brands, to over 4 million happy customers.</p>
+        </div>
+        <ul class="r-footer">
+            <li>
+                <h2>
+                    Social</h2>
+                <ul class="box">
+                    <li><a href="#">
+                            <p><i class="fa-brands fa-facebook"></i> Facebook</p>
+                        </a></li>
+                    <li><a href="#">
+                            <p><i class="fa-brands fa-twitter"></i> Twitter</p>
+                        </a></li>
+                    <li><a href="#">
+                            <p><i class="fa-brands fa-pinterest"></i> Pinterest</p>
+                        </a></li>
+                    <li><a href="#">
+                            <p><i class="fa-brands fa-instagram"></i> instagram</p>
+                        </a></li>
+                </ul>
+            </li>
+            <li class="features">
+                <h2>
+                    Information</h2>
+                <ul class="box h-box">
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="#">Sales</a></li>
+                    <li><a href="#">Tickets</a></li>
+                    <li><a href="#">Certifications</a></li>
+
+                </ul>
+            </li>
+            <li>
+                <h2>
+                    Legal</h2>
+                <ul class="box">
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Use</a></li>
+                    <li><a href="#">Contract</a></li>
+                </ul>
+            </li>
+        </ul>
+        <div class="b-footer">
+            <p>
+                <img src="payment-method_69e7ec.svg" alt="">
+                <br>
+                &copy; grocerystore.com | Designed by Jash Asmani & Dhairya Bhatt
+        </div>
+    </footer>
+
+</body>

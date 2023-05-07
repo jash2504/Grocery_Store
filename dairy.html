@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/92ba12f5f7.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="favicon-32x32.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="footer.css">
+    <title>Grocery Store-Dairy</title>
+    <style>
+        .right {
+            float: right;
+            padding: 6px 50px;
+            list-style: none;
+        }
+
+        .btn {
+            padding: 15px 60px;
+            border: 2px solid rgb(5, 5, 5);
+            background-color: transparent;
+            color: rgb(0, 0, 0);
+            margin: 25px;
+            font-size: 1.5rem;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        * {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+            outline: none;
+            border: none;
+            text-decoration: none;
+            transition: all .2s linear;
+            text-transform: capitalize;
+        }
+
+        #navbar {
+            /* background-color: #05080b;  */
+
+            border-radius: 0px;
+            width: cover;
+            background-color: #008Ecc;
+            box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.977);
+
+            /* nav-down:  20%;  */
+        }
+
+        #navbar ul {
+            overflow: auto;
+
+            /* display: flex; */
+            margin: 3px 10px;
+            /* background-color: rgb(0, 123, 175); */
+            width: cover;
+
+
+        }
+
+        #navbar li {
+            float: right;
+            /* float: inherit; */
+            list-style: none;
+            font-size: x-large;
+            margin: 13px 15px;
+        }
+
+        #navbar li a {
+            padding: 3px 20px;
+            font-size: x-large;
+            text-decoration: none;
+            color: rgb(220, 220, 220);
+
+        }
+
+        #navbar div.left {
+            float: left;
+            font-family: Georgia;
+            color: aliceblue;
+            /* padding: 6px 50px;  */
+        }
+
+        #navbar li a:hover {
+
+            color: rgb(239, 228, 16);
+        }
+
+        #navbar i {
+            width: 25px;
+            text-align: center;
+        }
+
+        .btn {
+
+
+            padding: 6px 20px;
+            border: 2px solid #008Ecc;
+            background-color: #008Ecc;
+            color: white;
+            margin: -5px;
+           
+            font-family: 'Times New Roman', Times, serif;
+            font-size: large;
+            /* font-size: 1.0rem; */
+            border-radius: 10px;
+            font-size: 2rem;
+            cursor: pointer;
+
+        }
+
+        
+
+        html {
+            font-size: 62.5%;
+            overflow-x: hidden;
+        }
+
+        body {
+            background-color: #f3f3f3;
+        }
+
+        .dairy {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .dairy .center {
+            font-size: 3.5rem;
+            color: #444;
+            margin-bottom: 3rem;
+            text-transform: upcpiase;
+            text-align: center;
+        }
+
+        .dairy .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+            gap: 2rem;
+        }
+
+        .dairy .products .box {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: rgb(255, 255, 255);
+            box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.1);
+            outline: .1rem solid #ccc;
+            outline-offset: -1.5rem;
+            cursor: pointer;
+        }
+
+        .dairy .products .box:hover {
+            outline: .2rem solid #222;
+            outline-offset: 0;
+        }
+
+        .dairy .products .box img {
+            height: 25rem;
+            outline-offset: 0;
+            padding: 3rem 2rem;
+        }
+
+        .dairy .products .box:hover img {
+            transform: scale(.9);
+        }
+
+        .dairy .products .box h3 {
+            padding: .5rem 0;
+            font-size: 2rem;
+            color: #444;
+        }
+
+        .dairy .products .box:hover h3 {
+            color: #27ae60;
+        }
+
+
+        .dairy .products .box .price {
+            font-size: 2rem;
+            color: #444;
+        }
+
+        .dairy .products .box:hover .price {
+            color: #fb0202;
+        }
+
+        .dairy .products .box .cart {
+            font-size: 2rem;
+            margin-bottom: -2%;
+            color: #444;
+            list-style: none;
+
+        }
+        .dairy .products .box .cart .btn {
+            font-size: 2rem;
+            text-align: left;
+            margin-bottom: 15px;
+            margin-top: 10px;
+            border: #008Ecc;
+            color: rgb(255, 255, 255);
+            background-color: #008Ecc;
+            list-style: none;
+            box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.1);
+            
+        }
+        .dairy .products .box .cart a:hover .btn {
+            color: #fb0202;
+
+        }
+        s {
+            text-decoration: line-through;
+        }
+        /* .slider img{
+            width: 100%;
+            height: 500px;
+            box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.1);
+        } */
+        .search {
+            padding-right: 40px;
+        }
+
+        .topnav input[type=text] {
+
+            padding: 6px;
+            margin-top: 8px;
+            margin-right: 16px;
+            border: none;
+
+            font-size: 1.5rem;
+        }
+
+
+        .topnav a,
+        .topnav input[type=text] {
+            float: none;
+            display: block;
+            text-align: left;
+            width: 100%;
+            margin: 0;
+            padding: 9px;
+        }
+
+        .topnav input[type=text] {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+        .dimg img{
+            width: 100%;
+            height: 120%;
+        }
+    </style>
+</head>
+
+<body>
+    <div width=100%>
+        <nav id="navbar">
+            <ul>
+
+
+                <div class="left">
+                    <li><i class="fa-solid fa-g"></i>rocery store</li>
+                </div>
+
+                <li>
+                    <div class="topnav">
+                        <form class="search">
+                            <input type="text" placeholder="Search item..">
+                        </form>
+                    </div>
+                </li>
+
+                <li><a href="http://localhost/files/login.html"><button class="btn">Log In</button></a> </li>
+                <!-- <li><a href="#"><i class="fa-solid fa-cart-shopping"></i><b> Cart</b> </a> </li> -->
+                <li><a href="gro.html"><i class="fa-solid fa-basket-shopping"></i><b>Provision</b></a></li>
+                <!-- <li><a href="deals.html"><i class="fa-brands fa-buffer"></i><b> Deals</b></a></li> -->
+                <li><a href="fruits.html"><i class="fa-solid fa-apple-whole"></i><b> Fruits</b></a> </li>
+                <li><a href="vegetables.html"><i class="fa-solid fa-carrot"></i><b> vegetables</b> </a> </li>
+                <li><a href="1_first_page.html"><i class="fa-solid fa-house"></i><b> Home</b></a></li>
+            </ul>
+
+        </nav>
+    </div>
+    <!-- stop slider -->
+    <!-- <div>
+        <a href="#">
+            <div class="slider"><img src="3ndfriut.jpg" alt=""></div>
+        </a>
+    </div> -->
+
+    <div class="dimg">
+        <img src="dairy/dairy-bakery-20200619.jpg" alt="">
+    </div>
+    <section class="dairy">
+
+        <h1 class="center">Fresh dairy</h1>
+        <div class="products">
+
+            <div class="box" data-name="v-1">
+                <img src="dairy/mother-dairy.jpg" alt="">
+                <h3>Mother Dairy Tadka Chach 350 ml (Pouch)</h3>
+                <div class="price"> M.R.P : ₹ <s>10.00</s></div>
+                <div class="price"><b> ₹ 9.00</b></div>
+                <div class="cart">
+                    <li><a href="#"><button class="btn">Add to cart</button></a> </li>
+                </div>
+            </div>
+
+            <div class="box" data-name="v-2">
+                <img src="dairy/anant-chaas.jpg" alt="">
+                <h3>Anant Chaas 500 ml (Pouch)</h3>
+                <div class="price"> M.R.P : ₹ <s>22.00</s></div>
+                <div class="price"><b> ₹ 11.00</b></div>
+                <div class="cart">
+                    <li><a href="#"><button class="btn">Add to cart</button></a> </li>
+                </div>
+            </div>
+
+            <div class="box" data-name="v-3">
+                <img src="dairy/amul-fresh-paneer-200-.jpg" alt="">
+                <h3>Amul Fresh Paneer 200 g (Pack)</h3>
+                <div class="price"> M.R.P : ₹ <s>80.00</s></div>
+                <div class="price"><b> ₹ 72.00</b></div>
+                <div class="cart">
+                    <li><a href="#"><button class="btn">Add to cart</button></a> </li>
+                </div>
+            </div>
+
+            <div class="box" data-name="v-4">
+                <img src="dairy/amul-butter-100-g.jpg" alt="">
+                <h3>Amul Butter 100 g (Carton)</h3>
+                <div class="price"> M.R.P : ₹ <s>52.00</s></div>
+                <div class="price"><b> ₹ 50.00</b></div>
+                <div class="cart">
+                    <li><a href="#"><button class="btn">Add to cart</button></a> </li>
+                </div>
+            </div>
+
+
+            <div class="box" data-name="v-5">
+                <img src="dairy/amul-taaza-homogenised-toned.jpg" alt="">
+                <h3>Amul Taaza Homogenised Toned Milk 1 L (Tetra Pak)</h3>
+                <div class="price"> M.R.P : ₹ <s>68.00</s></div>
+                <div class="price"><b> ₹ 63.00</b></div>
+                <div class="cart">
+                    <li><a href="#"><button class="btn">Add to cart</button></a> </li>
+                </div>
+            </div>
+
+            <div class="box" data-name="v-16">
+                <img src="dairy/crave-eatables-bachubhai-s-full.jpg" alt="">
+                <h3>Crave Eatables Bachubhai's Full Cream Elaichi Shrikhand 500 g (Cup)</h3>
+                <div class="price"> M.R.P : ₹ <s>168.00</s></div>
+                <div class="price"><b> ₹ 84.00</b></div>
+                <div class="cart">
+                    <li><a href="#"><button class="btn">Add to cart</button></a> </li>
+                </div>
+            </div>
+
+            <div class="box" data-name="v-6">
+                <img src="dairy/amul-cheese-chiplets-200-.jpg" alt="">
+                <h3>Amul Cheese Chiplets 200 g (Carton) </h3>
+                <div class="price"> M.R.P : ₹ <s>122.00</s></div>
+                <div class="price"><b> ₹ 115.00</b></div>
+                <div class="cart">
+                    <li><a href="#"><button class="btn">Add to cart</button></a> </li>
+                </div>
+            </div>
+
+            <div class="box" data-name="v-7">
+                <img src="dairy/amul-pasteurised-butter-200-g.jpg" alt="">
+                <h3>Amul Pasteurised Butter 200 g (Tub)</h3>
+                <div class="price"> M.R.P : ₹ <s>102.00</s></div>
+                <div class="price"><b> ₹ 96.00</b></div>
+                <div class="cart">
+                    <li><a href="#"><button class="btn">Add to cart</button></a> </li>
+                </div>
+            </div>
+
+            <div class="box" data-name="v-8">
+                <img src="dairy/amul-kool-kesar-flavoured.jpg" alt="">
+                <h3>Amul Kool Kesar Flavoured Milk 180 ml (Bottle)</h3>
+                <div class="price"> M.R.P : ₹ <s>20.00</s></div>
+                <div class="price"><b> ₹ 19.00</b></div>
+                <div class="cart">
+                    <li><a href="#"><button class="btn">Add to cart</button></a> </li>
+                </div>
+            </div>
+
+            
+            <div class="right">
+                <li><a href="1_first_page.html"><button class="btn">Back</button></a> </li>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="l-footer">
+            <h1>
+                <img src="favicon-32x32.png" alt="">
+            </h1>
+            <p>
+                Did you ever imagine that the freshest of dairy and vegetables, top quality pulses and food grains, dairy products and hundreds of branded items could be handpicked and delivered to your home, all at the click of a button? India’s first comprehensive online megastore,  grocerystore.com, brings a whopping 20000+ products with more than 1000 brands, to over 4 million happy customers.</p>
+        </div>
+        <ul class="r-footer">
+            <li>
+                <h2>
+                    Social</h2>
+                <ul class="box">
+                    <li><a href="#">
+                            <p><i class="fa-brands fa-facebook"></i> Facebook</p>
+                        </a></li>
+                    <li><a href="#">
+                            <p><i class="fa-brands fa-twitter"></i> Twitter</p>
+                        </a></li>
+                    <li><a href="#">
+                            <p><i class="fa-brands fa-pinterest"></i> Pinterest</p>
+                        </a></li>
+                    <li><a href="#">
+                            <p><i class="fa-brands fa-instagram"></i> instagram</p>
+                        </a></li>
+                </ul>
+            </li>
+            <li class="features">
+                <h2>
+                    Information</h2>
+                <ul class="box h-box">
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="#">Sales</a></li>
+                    <li><a href="#">Tickets</a></li>
+                    <li><a href="#">Certifications</a></li>
+
+                </ul>
+            </li>
+            <li>
+                <h2>
+                    Legal</h2>
+                <ul class="box">
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Use</a></li>
+                    <li><a href="#">Contract</a></li>
+                </ul>
+            </li>
+        </ul>
+        <div class="b-footer">
+            <p>
+                <img src="payment-method_69e7ec.svg" alt="">
+                <br>
+                &copy; grocerystore.com | Designed by Jash Asmani 
+        </div>
+    </footer>
+
+</body>
